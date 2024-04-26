@@ -1,0 +1,60 @@
+html
+{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body
+{
+    position: relative;
+    background-color: #404040;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+white
+{
+    color:white;
+}
+
+hr
+{
+    color:white;
+}
+
+.no-bg-color 
+{
+    background-color: transparent !important;
+}
+
+.no-color-change:focus,
+.no-color-change:active {
+  color: inherit !important;
+}
+
+.modal-body img 
+{
+    margin-bottom: 15px;
+}
+  
+.carousel
+{
+    border-radius: 20px;
+    box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item {
+    transition-duration: 0.5s;
+  }
+
+/* CSS for the carousel images */
+.carousel-item img 
+{
+    width: 100%; /* Set width to fill container */
+
+}
+
+.navbar-dark
+{
+    background-color: #262626 !important;
+    box-shadow: 0 10px 20px 1px rgba(0,0,0,0.3) !important;
+}

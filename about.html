@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking | About</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch" rel="stylesheet">
+
+  <script>
+    $(document).ready(function() {
+      $("#LoginSubmit").click(function(event) {
+        event.preventDefault();
+        var loginEmailValue = $("#loginEmail").val();
+        var loginPasswordValue = $("#loginPassword").val();
+  
+        if (!loginEmailValue || !loginPasswordValue) {
+          alert("Please fill in both inputs.");
+          $("#loginModal").modal("show");
+        } else if (loginEmailValue.indexOf("@") === -1) {
+          alert("Invalid email address. Please enter a valid email address.");
+          $("#loginModal").modal("show");
+        } else {
+          alert("Successfully Login");
+          $("#loginModal").modal("hide");
+        }
+      });
+      $("#RegisterSubmit").click(function(event) {
+        event.preventDefault();
+        var registerEmailValue = $("#registerEmail").val();
+        var registerPasswordValue = $("#registerPassword").val();
+        var register2PasswordValue = $("#register2Password").val();
+  
+        if (!registerEmailValue || !registerPasswordValue || !register2PasswordValue) {
+          alert("Please fill in all the inputs.");
+          $("#registerModal").modal("show");
+        } else if (registerEmailValue.indexOf("@") === -1) {
+          alert("Invalid email address. Please enter a valid email address.");
+          $("#registerModal").modal("show");
+        } else if (registerPasswordValue !== register2PasswordValue) {
+          alert("Passwords do not match. Please enter the same password in both fields.");
+          $("#registerModal").modal("show");
+        } else {
+          alert("Successfully Registered");
+          $("#registerModal").modal("hide");
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">About</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Booking
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!--li class="dropdown-item no-bg-color no-color-change">Genres</li-->
+              <li><a class="dropdown-item" href="besthotel.html">BestHotel</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="4starhotel.html">4 StarHotel</a></li>
+              <li><a class="dropdown-item" href="3starhotel.html">3 StarHotel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Login Modal -->
+<div class="modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword">
+          </div>
+          <button id="LoginSubmit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="registerPassword">
+          </div>
+          <div class="mb-3">
+            <label for="register2Password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="register2Password">
+          </div>
+          <button id="RegisterSubmit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <white>
+  <div class="container py-4 py-xl-5">
+    <div class="col-lg-8 col-xl-6 mx-auto">
+      <h1 class="fw-bold text-center">What is a hotel reservation?</h1>
+      <p>&nbsp;The name "Hotel Booking" is self-explanatory. Because our website provides hotel booking services.</p>
+      <br><br><br>
+      <h1 class="fw-bold text-center">What is the price range?</h1>
+      <p>&nbsp;As stated in the link of the accommodation booking service, each accommodation will have different prices because we have accommodations ranging from 3 stars - 5 stars.</p>
+      <br><br><br>
+      <h1 class="fw-bold text-center">Are you experiencing problems?</h1>
+      <p>&nbsp;If you have experienced technical difficulties on the website, please reach out to us at HotelBooking@gmail.com.</p>
+    </div>
+  </div>
+</white>
+
+</body>
+</html>

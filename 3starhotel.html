@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking | 3 StarHotel</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="css/genre.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch" rel="stylesheet">
+  
+  <script>
+    $(document).ready(function() {
+      $("#msg1").hide();
+      $("#msg2").hide();
+      $("#msg3").hide();
+
+      $("#LoginSubmit").click(function(event) {
+        event.preventDefault();
+        var loginEmailValue = $("#loginEmail").val();
+        var loginPasswordValue = $("#loginPassword").val();
+  
+        if (!loginEmailValue || !loginPasswordValue) {
+          alert("Please fill in both inputs.");
+          $("#loginModal").modal("show");
+        } else if (loginEmailValue.indexOf("@") === -1) {
+          alert("Invalid email address. Please enter a valid email address.");
+          $("#loginModal").modal("show");
+        } else {
+          alert("Successfully Login");
+          $("#loginModal").modal("hide");
+        }
+      });
+      $("#RegisterSubmit").click(function(event) {
+        event.preventDefault();
+        var registerEmailValue = $("#registerEmail").val();
+        var registerPasswordValue = $("#registerPassword").val();
+        var register2PasswordValue = $("#register2Password").val();
+  
+        if (!registerEmailValue || !registerPasswordValue || !register2PasswordValue) {
+          alert("Please fill in all the inputs.");
+          $("#registerModal").modal("show");
+        } else if (registerEmailValue.indexOf("@") === -1) {
+          alert("Invalid email address. Please enter a valid email address.");
+          $("#registerModal").modal("show");
+        } else if (registerPasswordValue !== register2PasswordValue) {
+          alert("Passwords do not match. Please enter the same password in both fields.");
+          $("#registerModal").modal("show");
+        } else {
+          alert("Successfully Registered");
+          $("#registerModal").modal("hide");
+        }
+      });
+      $("#book1").click(function(event) {
+        event.preventDefault();
+        var date = $("#date").val();
+        var time = $("#time").val();
+        var numticket = $("#numticket").val();
+        var fee = 200.00;
+				var fee_total = numticket * fee;
+
+        if (!date || !time || !numticket) {
+          alert("Please fill in all the inputs.");
+        }
+        else {
+        alert("Information\nHotel:Ago Hotel Chinatown\nDate(YYYY/MM/DD): "+date+"\nTime(UTC+7): "+time+"\nNumber of Tickets: "+numticket+"\nTotal Price: "+fee_total+"THB"+"\n-------------------------------------"+"\nPlease confirm payment.");
+        $("#msg1").html("The service fee is " +fee_total+ "THB <br>" );
+				$("#msg1").append("Kindly ensure payment is made within 15 minutes. <br>");
+        $("#msg1").append("Please click on the image to zoom in. <br>");
+				$("#msg1").append("<a href='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg' target='_blank'><img src='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg?width=418&height=675' class='img-fluid' width=200/></a>");
+        $("#msg1").fadeIn("slow");
+        }
+  
+      });
+      $("#book2").click(function(event) {
+        event.preventDefault();
+        var date2 = $("#date2").val();
+        var time2 = $("#time2").val();
+        var numticket2 = $("#numticket2").val();
+        var fee2 = 200.00;
+				var fee_total2 = numticket2 * fee2;
+
+        if (!date2 || !time2 || !numticket2) {
+          alert("Please fill in all the inputs.");
+        }
+        else {
+        alert("Information\nHotel:Saan Hotel Sathorn\nDate(YYYY/MM/DD): "+date+"\nTime(UTC+7): "+time+"\nNumber of Tickets: "+numticket+"\nTotal Price: "+fee_total+"THB"+"\n-------------------------------------"+"\nPlease confirm payment.");
+        $("#msg2").html("The service fee is " +fee_total2+ "THB <br>" );
+				$("#msg2").append("Kindly ensure payment is made within 15 minutes. <br>");
+        $("#msg2").append("Please click on the image to zoom in. <br>");
+				$("#msg2").append("<a href='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg' target='_blank'><img src='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg?width=418&height=675' class='img-fluid' width=200/></a>");
+        $("#msg2").fadeIn("slow");
+        }
+  
+      });    
+      $("#book3").click(function(event) {
+        event.preventDefault();
+        var date3 = $("#date3").val();
+        var time3 = $("#time3").val();
+        var numticket3 = $("#numticket3").val();
+        var fee3 = 200.00;
+				var fee_total3 = numticket3 * fee3;
+
+        if (!date3 || !time3 || !numticket3) {
+          alert("Please fill in all the inputs.");
+        }
+        else {
+        alert("Information\nHotel:Woodstory Boutique Hotel\nDate(YYYY/MM/DD): "+date+"\nTime(UTC+7): "+time+"\nNumber of Tickets: "+numticket+"\nTotal Price: "+fee_total+"THB"+"\n-------------------------------------"+"\nPlease confirm payment.");
+        $("#msg3").html("The service fee is " +fee_total3+ "THB <br>" );
+				$("#msg3").append("Kindly ensure payment is made within 15 minutes. <br>");
+        $("#msg3").append("Please click on the image to zoom in. <br>");
+				$("#msg3").append("<a href='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg' target='_blank'><img src='https://media.discordapp.net/attachments/742600047811756034/1102345401010495528/screen_image.jpg?width=418&height=675' class='img-fluid' width=200/></a>");
+        $("#msg3").fadeIn("slow");
+        }
+  
+      });    
+    });
+  </script>
+
+</head>
+<body>
+
+  <!--Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">3 StarHotel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hotel
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!--li class="dropdown-item no-bg-color no-color-change">Genres</li-->
+              <li><a class="dropdown-item" href="besthotel.html">BestHotel</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="4starhotel.html">4 StarHotel</a></li>
+              <li><a class="dropdown-item" href="3starhotel.html">3 StarHotel</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Modal -->
+<div class="modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="loginPassword">
+          </div>
+          <button id="LoginSubmit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="registerPassword">
+          </div>
+          <div class="mb-3">
+            <label for="register2Password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="register2Password">
+          </div>
+          <button id="RegisterSubmit" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+  <div class="container py-4 py-xl-5">
+    <white><h1><center>
+      3 StarHotel
+    </center></h1></white>
+    <hr>
+    <div class="row">
+
+      <!--Card1-->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="img/h7.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Ago Hotel Chinatown</h5>
+            <p class="card-text">โรงแรมอะโกไชน่าทาวน์  Ago Hotel Chinatown โรงแรมบูทีคโฮเทลสุดคลาสสิกที่เพิ่งเปิดใหม่กลางย่านตลาดน้อย,หัวลำโพง,ถนนเยาวราช ที่นี่เป็นการรีโนเวทบ้านเก่าตึกแถว 3 ห้อง 5 ชั้น</p><br>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">
+              Read more
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mybookModal1">
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal1 -->
+      <div class="modal" id="myModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ago Hotel Chinatown</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="video-container">
+                <iframe width="800" height="450" src="//" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p style="padding-top: 15px;">&nbsp;โรงแรมอะโกไชน่าทาวน์  Ago Hotel Chinatown โรงแรมบูทีคโฮเทลสุดคลาสสิกที่เพิ่งเปิดใหม่กลางย่านตลาดน้อย,หัวลำโพง,ถนนเยาวราช ที่นี่เป็นการรีโนเวทบ้านเก่าตึกแถว 3 ห้อง 5 ชั้นให้เป็นโรงแรม,มีการผสมผสานระหว่างความวินเทจและความเป็นจีนร่วมสมัย,ภายในห้องพักตกแต่งด้วยสไตล์โมเดิร์น,มาพร้อมสิ่งอำนวยความสะดวกครบครัน,มีห้องพักขนาดกระทัดรัดกับที่นอนคุณภาพ 5 ดาวทั้งหมดจำนวน 35 ห้องในราคาสบายกระเป๋า.</p>
+              <span class="badge bg-drama">3 StarHotel</span>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bookModal1 -->
+      <div class="modal" id="mybookModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reservation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date">
+                </div>
+                <div class="mb-3">
+                  <label for="time" class="form-label">Time</label>
+                  <input type="time" class="form-control" id="time">
+                </div>
+                <div class="mb-3">
+                  <label for="numticket" class="form-label">จำนวนห้อง(ค่ามัดจำ 2000/1 ห้อง)</label>
+                  <input type="number" class="form-control" id="numticket" min="1">
+                </div>
+                <button id="book1" type="submit" class="btn btn-danger">Book Now</button>
+              </form>
+              <br>
+                <div id="msg1" class="alert alert-warning mb-3" role="alert">
+                ...
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Card2-->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="img/h8.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Saan Hotel Sathorn</h5>
+            <p class="card-text">โรงแรม Saan Hotel Sathorn เป็นโรงเเรมที่อยู่ใกล้สถานที่ท่องเที่ยว ไอคอนสยาม,พระบรมมหาราชวัง,วัดอรุณ,เอเชียทีค เดอะริเวอร์ฟร้อนท์,ถนนข้าวสาร</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">
+              Read More
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mybookModal2">
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal2 -->
+      <div class="modal" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Saan Hotel Sathorn</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="video-container">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/nfK6UgLra7g" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p style="padding-top: 15px;">&nbsp;Saan Hotel Sathorn ตั้งอยู่ในกรุงเทพมหานคร ห่างจากวัดอรุณ 4.9 กม. ให้บริการที่พักพร้อมอินเทอร์เน็ตไร้สาย (WiFi) ฟรีและที่จอดรถส่วนตัวฟรี โรงแรม 3 ดาวนี้มีแผนกต้อนรับตลอด 24 ชั่วโมงและพื้นที่รับฝากสัมภาระ ที่พักนี้ปลอดบุหรี่และมีทำเลที่ตั้งอยู่ห่างจากวัดโพธิ์ 4.9 กม. Saan Hotel Sathorn ให้บริการห้องพักติดตั้งเครื่องปรับอากาศซึ่งมีโต๊ะ กาต้มน้ำ ตู้เย็น ตู้เซฟ โทรทัศน์จอแบน และห้องน้ำแบบส่วนตัวพร้อมฝักบัว ที่ที่พักนี้ ทุกห้องประกอบด้วยชุดเครื่องนอนและผ้าเช็ดตัว ผู้เข้าพักที่ Saan Hotel Sathorn สามารถอิ่มอร่อยกับอาหารเช้าแบบอเมริกัน วัดพระแก้ว อยู่ห่างจาก Saan Hotel Sathorn 5.4 กม. ส่วนพระบรมมหาราชวัง อยู่ห่างออกไป 5.5 กม. สนามบินที่ใกล้ที่สุดคือสนามบินนานาชาติดอนเมือง ซึ่งห่างจากที่พักนี้ 29 กม.</p>
+              <span class="badge bg-drama">3 StarHotel</span>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bookModal2 -->
+      <div class="modal" id="mybookModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reservation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date2">
+                </div>
+                <div class="mb-3">
+                  <label for="time" class="form-label">Time</label>
+                  <input type="time" class="form-control" id="time2">
+                </div>
+                <div class="mb-3">
+                  <label for="numticket" class="form-label">จำนวนห้อง(ค่ามัดจำ 2000/1 ห้อง)</label>
+                  <input type="number" class="form-control" id="numticket2" min="1">
+                </div>
+                <button id="book2" type="submit" class="btn btn-danger">Book Now</button>
+              </form>
+              <br>
+                <div id="msg2" class="alert alert-warning mb-3" role="alert">
+                ...
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!--Card3-->
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="img/h9.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Woodstory Boutique Hotel</h5>
+            <p class="card-text">Woodstory Boutique Hotel เป็นที่พัก 3 ดาวซึ่งอยู่ในกรุงเทพมหานคร ห่างจากตลาดนัดจตุจักร 5.9 กม. และห่างจากเซ็นทรัลพลาซา ลาดพร้าว 5.9 กม. ที่พักนี้อยู่ห่างจากเซ็นทรัลเฟสติวัล อีสต์วิลล์ 7.6 กม. ห่างจากเซ็นทรัลเวิลด์พลาซ่า 8.4 กม. และห่างจากซีไลฟ์ แบงคอก โอเชียน เวิลด์ 8.6 กม. โดยประมาณ อินเทอร์เน็ตไร้สาย (WiFi) ฟรีมีให้บริการ ส่วนที่จอดรถส่วนตัวสามารถจัดเตรียมให้ได้โดยมีค่าธรรมเนียมเพิ่มเติม.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal3">
+              Read More
+            </button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mybookModal3">
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Modal3 -->
+      <div class="modal" id="myModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Woodstory Boutique Hotel</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="video-container">
+                <iframe width="800" height="450" src="////" frameborder="0" allow="accelerometer; autoplay; 
+                clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <p style="padding-top: 15px;">&nbsp;Woodstory Boutique Hotel เป็นที่พัก 3 ดาวซึ่งอยู่ในกรุงเทพมหานคร ห่างจากตลาดนัดจตุจักร 5.9 กม. และห่างจากเซ็นทรัลพลาซา ลาดพร้าว 5.9 กม. ที่พักนี้อยู่ห่างจากเซ็นทรัลเฟสติวัล อีสต์วิลล์ 7.6 กม. ห่างจากเซ็นทรัลเวิลด์พลาซ่า 8.4 กม. และห่างจากซีไลฟ์ แบงคอก โอเชียน เวิลด์ 8.6 กม. โดยประมาณ อินเทอร์เน็ตไร้สาย (WiFi) ฟรีมีให้บริการ ส่วนที่จอดรถส่วนตัวสามารถจัดเตรียมให้ได้โดยมีค่าธรรมเนียมเพิ่มเติม Woodstory Boutique Hotel ให้บริการห้องพักติดตั้งเครื่องปรับอากาศพร้อมโต๊ะ กาต้มน้ำ ตู้เย็น ตู้เซฟ โทรทัศน์จอแบน และห้องน้ำแบบส่วนตัวพร้อมฝักบัว ที่ที่พักนี้ ห้องพักมีชุดเครื่องนอนและผ้าเช็ดตัว อัมรินทร์พลาซ่า อยู่ห่างจาก Woodstory Boutique Hotel 8.8 กม. ส่วนเซ็นทรัล เอ็มบาสซี อยู่ห่างจากที่พัก 8.8 กม. สนามบินที่ใกล้ที่สุดคือสนามบินนานาชาติดอนเมือง ซึ่งห่างจาก Woodstory Boutique Hotel 20 กม.</p>
+              <span class="badge bg-drama">3 StarHotel</span>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bookModal3 -->
+      <div class="modal" id="mybookModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reservation</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date3">
+                </div>
+                <div class="mb-3">
+                  <label for="time" class="form-label">Time</label>
+                  <input type="time" class="form-control" id="time3">
+                </div>
+                <div class="mb-3">
+                  <label for="numticket" class="form-label">จำนวนห้อง(ค่ามัดจำ 2000/1 ห้อง)</label>
+                  <input type="number" class="form-control" id="numticket3" min="1">
+                </div>
+                <button id="book3" type="submit" class="btn btn-danger">Book Now</button>
+              </form>
+              <br>
+                <div id="msg3" class="alert alert-warning mb-3" role="alert">
+                ...
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+</body>
+</html>
